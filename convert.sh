@@ -8,6 +8,7 @@ dest=$2
 find $1 -type f -name \*.flac  -print0 | while IFS= read -r -d '' file; 
 do
   # Check if the file is a flac file
-  ffmpeg -i "$file" -b:a "${BITRATE}k" "$dest${file#source%.flac}.opus"
+  filedest=${dest/$source/$dest}
+  ffmpeg -i "$file" -b:a "${BITRATE}k" "${filedest%.flac}.opus"
 done
 
