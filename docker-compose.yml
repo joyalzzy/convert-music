@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  convertmusic:
+    image: convertmusic
+    build:
+      context: .
+      dockerfile: ./Dockerfile
