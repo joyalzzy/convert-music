@@ -10,6 +10,7 @@ do
   # Check if the file is a flac file
   filedest=${file/$source/$dest}
   echo $filedest
+  mkdir -p ${filedest%./}
   ffmpeg -i "$file" -b:a "${BITRATE}k" "${filedest%.flac}.opus"
 done
 
