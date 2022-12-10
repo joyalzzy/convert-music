@@ -4,6 +4,8 @@ BITRATE=160
 source=$1
 dest=$2
 
+ls -l /music
+
 # Loop through all files in the current directory
 for file in $(find $1 - type f -name \*.flac  -print0 | while IFS= read -r -d '' file); 
 do
